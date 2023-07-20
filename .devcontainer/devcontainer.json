@@ -1,0 +1,18 @@
+{
+    "name": "admin-fe",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "workspaceFolder": "/app",
+    "service": "admin:fe",
+    "remoteUser": "node",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin",
+                "ms-playwright.playwright"
+            ]
+        }
+    }
+}

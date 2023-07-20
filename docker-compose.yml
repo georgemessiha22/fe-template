@@ -1,0 +1,23 @@
+version: '3.7'
+
+volumes:
+  node_modules:
+  svelte-kit:
+
+services:
+  fe-template:
+    build:
+      dockerfile: ./dev/docker/Dockerfile
+      context: .
+      target: dev
+    user: node
+    command: npm run dev
+    volumes:
+      - ./app:/home/node/app
+      - node_modules:/home/node/app/node_modules:cached
+      - ./docs:/home/node/app/docs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fe-template.rule=Host(`fe-template.local.domain.com`) || PathPrefix(`/fe-template/`)"
+      - "traefik.http.routers.fe-template.entrypoints=web"
+      - "traefik.http.services.fe-template.loadbalancer.server.port=8000"
