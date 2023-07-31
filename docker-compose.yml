@@ -18,6 +18,6 @@ services:
       - ./docs:/home/node/app/docs
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fe-template.rule=Host(`fe-template.local.domain.com`) || PathPrefix(`/fe-template/`)"
+      - "traefik.http.routers.fe-template.rule=Host(`${FE_TEMAPLATE_URL}`)"
       - "traefik.http.routers.fe-template.entrypoints=web"
       - "traefik.http.services.fe-template.loadbalancer.server.port=8000"

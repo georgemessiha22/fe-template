@@ -6,6 +6,10 @@
 - you can use `VueJS`, `SevleteJS` or `ReactJS`.
 - to add `yarn`, `pnpm` and `TS` please read just `./dev/docker/Dockerfile` first.
 
+## Configuration
+
+normally traefik is configure to have your `service.localhost` as your domain, you can change that in `.env`
+
 ## Usage
 
 Run initial script, using:
